@@ -30,18 +30,29 @@
   --border-radius-card: 20px;
   --border-radius-section: 50px;
   --border-radius-circle: 50%;
+
+  --card-max-width: 390px;
+  --card-height: 407px;
 }
 
 body {
   font-family: 'Gilroy', sans-serif;
 }
 
+.container {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
 .wrap {
+  width: 100%;
+  height: 713px;
   box-sizing: border-box;
   background-color: var(--dark-grey);
-  padding: 153px 224px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(300px, var(--card-max-width)));
+  justify-content: center;
+  align-items: center;
   gap: var(--gap);
   border-radius: var(--border-radius-section);
   position: relative;
@@ -58,7 +69,8 @@ body {
   flex-direction: column;
   gap: var(--gap);
   z-index: var(--z-content);
-  max-width: 390px;
+  max-width: var(--card-max-width);
+  height: var(--card-height);
 }
 
 .card__logo {

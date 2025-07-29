@@ -24,8 +24,9 @@
 
   --padding-card: 35px;
   --gap: 55px;
-
+  --mini-gap: 20px;
   --circle-size: 523px;
+  --circle-mini-size: 240px;
 
   --border-radius-card: 20px;
   --border-radius-section: 50px;
@@ -118,4 +119,19 @@ body {
   z-index: var(--z-circle-3);
   bottom: -5%;
   left: 43%;
+}
+
+@media screen and (max-width: 500px) {
+  .wrap {
+    padding: 80px 20px;
+    grid-template-columns: 1fr;
+    align-items: center;
+    height: max-content;
+    gap: var(--mini-gap);
+  }
+
+  .circle {
+    width: var(--circle-mini-size);
+    height: var(--circle-mini-size);
+  }
 }

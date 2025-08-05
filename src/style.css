@@ -73,6 +73,9 @@ body {
   z-index: var(--z-content);
   max-width: var(--card-max-width);
   height: var(--card-height);
+  /* animation: card-opacity 1s; */
+  position: relative;
+  transform-style: preserve-3d;
 }
 
 .card__logo {
@@ -150,5 +153,51 @@ body {
   .circle {
     width: var(--circle-mini-size);
     height: var(--circle-mini-size);
+  }
+}
+
+@keyframes card-opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card_back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: inherit;
+  border-radius: var(--border-radius-card);
+}
+
+.card:hover {
+  animation:
+    /* twist-card 1s ease forwards, */ fly-card 1s ease infinite alternate;
+  box-shadow: rgba(84, 78, 17, 0.263) 0px 10px 15px 0px;
+}
+
+/* @keyframes twist-card {
+  0% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(180deg);
+  }
+  100% {
+    transform: translateY(-20px) rotateY(360deg);
+  }
+} */
+
+@keyframes fly-card {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(-25px);
   }
 }

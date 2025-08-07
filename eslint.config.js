@@ -6,12 +6,12 @@ import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    files: ["/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: { js },
     extends: ["js/recommended"],
   },
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    files: ["/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     languageOptions: { globals: globals.browser },
   },
   tseslint.configs.recommended,
@@ -25,6 +25,8 @@ export default defineConfig([
       },
     },
     rules: {
+      "no-console": ["error", { allow: ["warn", "error"] }],
+      "react/prop-types": "off",
       "react/react-in-jsx-scope": "off",
     },
   },

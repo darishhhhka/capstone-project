@@ -1,9 +1,11 @@
-import { IconComponent } from "./IconComponent";
-import "./index.css";
+import { IconComponent } from './IconComponent';
+import './index.css';
 
-export const Card = ({ iconName, title, description }) => {
+export const Card = ({ iconName, title, description, className }) => {
   return (
-    <article className="font-['Gilroy'] h-[var(--card-height)] max-w-[var(--card-max-width)] bg-[var(--medium-grey)] p-[var(--padding-card)] rounded-2xl flex flex-col gap-[var(--gap)]">
+    <article
+      className={`${className} font-['Gilroy'] h-[var(--card-height)] max-w-[var(--card-max-width)] bg-[var(--medium-grey)] p-[var(--padding-card)] rounded-2xl flex flex-col gap-[var(--gap)]`}
+    >
       <div className="self-end">
         <IconComponent iconName={iconName} className="w-1/3" />
       </div>
